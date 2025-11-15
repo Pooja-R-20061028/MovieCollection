@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🎥 Tamil Movies (2006–2025)</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+  }
+
+  nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  nav a, nav button {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  nav a:hover, nav button:hover {
+    color: #f8c100;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 30px 0 20px;
+    color: #f8c100;
+    text-shadow: 0 0 10px #f8c100;
+  }
+
+  #searchBox {
+    width: 90%;
+    max-width: 600px;
+    padding: 12px;
+    margin: 0 auto 30px;
+    display: block;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+  }
+
+  .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    padding: 0 40px 60px;
+  }
+
+  .movie-card {
+    background-color: #1b1b1b;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,204,0,0.7);
+  }
+
+  .movie-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .movie-info {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .movie-info h3 {
+    margin: 5px 0;
+    color: #ffcc00;
+  }
+
+  .movie-info p {
+    font-size: 14px;
+    color: #bbb;
+  }
+
+  .trailer-btn {
+    background-color: #f8c100;
+    border: none;
+    color: black;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: 0.3s;
+  }
+
+  .trailer-btn:hover {
+    background-color: #fff000;
+    transform: scale(1.05);
+  }
+</style>
+</head>
+<body>
+
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="movies.html">Movies</a>
+    <a href="music.html">Music</a>
+    <a href="about.html">About</a>
+    <button onclick="toggleDark()">🌙</button>
+  </nav>
+
+<h1>🎬 Tamil Movies (2006–2025)</h1>
+
+<input id="searchBox" placeholder="🔍 Search movies...">
+
+<div class="movie-grid" id="movieContainer">
+  <!-- Movies appear here -->
+</div>
+<script>
+const movies = [
+  { title: "Petta", year: 2019, poster: "petta_poster.jpg", trailer: "https://www.youtube.com/watch?v=2TBgkk4JhE0" },
+  { title: "Master", year: 2021, poster: "master_poster.jpg", trailer: "https://www.youtube.com/watch?v=UTiXQcrLlv4" },
+  { title: "Leo", year: 2023, poster: "poster_leo.jpg", trailer: "https://www.youtube.com/watch?v=Po3jStA673E" },
+  { title: "Vikram", year: 2022, poster: "vikram_poster.jpg", trailer: "https://www.youtube.com/watch?v=OKBMCL-frPU" },
+  { title: "Mersal", year: 2017, poster: "mersal_poster.jpg", trailer: "https://www.youtube.com/watch?v=3FBIp8qKlp4" },
+  { title: "PS: Ponniyin Selvan", year: 2022, poster: "ps_poster.jpg", trailer: "https://www.youtube.com/watch?v=KbtzELcA9Yk" },
+  { title: "Soorarai Pottru", year: 2020, poster: "surya_retro.jpg", trailer: "https://www.youtube.com/watch?v=fa_DIwRsa9o" },
+  { title: "Thunivu", year: 2023, poster: "thunivu_poster.jpg", trailer: "https://www.youtube.com/watch?v=j6ZBM9E7kKs" },
+  { title: "Varisu", year: 2023, poster: "varisu_poster.jpg", trailer: "https://www.youtube.com/watch?v=pfZkBj7J5d8" },
+  { title: "Kabali", year: 2016, poster: "kabali_poster.jpg", trailer: "https://www.youtube.com/watch?v=9mdJV5-eias" },
+  { title: "Enthiran", year: 2010, poster: "enthiran_poster.jpg", trailer: "https://www.youtube.com/watch?v=3MuXrN8L9ro" },
+  { title: "Vivegam", year: 2017, poster: "vivegam_poster.jpg", trailer: "https://www.youtube.com/watch?v=2GgxMu0K8kA" },
+  { title: "Ghilli", year: 2006, poster: "ghilli_poster.jpg", trailer: "https://www.youtube.com/watch?v=jJFi-jw2W2k" },
+  { title: "Jailer", year: 2023, poster: "jailer_poster.jpg", trailer: "https://www.youtube.com/watch?v=tJZtOrm-WPk" },
+  { title: "Meiyazhagan", year: 2024, poster: "meiyazhagan_poster.jpg", trailer: "https://www.youtube.com/watch?v=6z2VmMCZogU" },
+  { title: "Ambikapathy", year: 2013, poster: "ambikapathy_poster.jpg", trailer: "https://www.youtube.com/watch?v=KqfXxE0VxnA" },
+  { title: "Anjaan", year: 2014, poster: "Anjaan_poster.jpg", trailer: "https://www.youtube.com/watch?v=keIgz0V5cS4" },
+  { title: "Anegan", year: 2015, poster: "Anegan_poster.jpg", trailer: "https://www.youtube.com/watch?v=fWl5RbLQ4Jo" },
+  { title: "10 Endrathukulla", year: 2015, poster: "pathu_endrathukulla_poster.jpg", trailer: "https://www.youtube.com/watch?v=wlQZndvZpN0" },
+  { title: "Amaran", year: 2024, poster: "Amaran_poster.jpg", trailer: "https://www.youtube.com/watch?v=wWB6dVubf2I" },
+];
+
+const movieContainer = document.getElementById("movieContainer");
+const searchBox = document.getElementById("searchBox");
+
+function displayMovies(list) {
+  movieContainer.innerHTML = "";
+  list.forEach(movie => {
+    const card = document.createElement("div");
+    card.classList.add("movie-card");
+    card.innerHTML = `
+      <img src="${movie.poster}" alt="${movie.title}">
+      <div class="movie-info">
+        <h3>${movie.title}</h3>
+        <p>${movie.year}</p>
+        <button class="trailer-btn" onclick="window.open('${movie.trailer}', '_blank')">▶ Watch Trailer</button>
+      </div>
+    `;
+    movieContainer.appendChild(card);
+  });
+}
+
+displayMovies(movies);
+
+searchBox.addEventListener("input", () => {
+  const searchText = searchBox.value.toLowerCase();
+  const filtered = movies.filter(m => m.title.toLowerCase().includes(searchText));
+  displayMovies(filtered);
+});
+</script>
+</body>
+</html>

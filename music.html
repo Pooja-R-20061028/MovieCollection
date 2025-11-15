@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎵 Tamil Movie Music</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #111;
+      color: white;
+      text-align: center;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 12px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      z-index: 1000;
+    }
+
+    nav a, nav button {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    nav a:hover, nav button:hover {
+      color: #f8c100;
+    }
+
+    h1 {
+      margin-top: 80px;
+      font-size: 34px;
+      color: #f8c100;
+      text-shadow: 2px 2px 6px black;
+    }
+
+    .music-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      margin: 40px auto;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .song-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      width: 100%;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .song-card:hover {
+      transform: scale(1.03);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .song-poster {
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+
+    .song-info {
+      flex: 1;
+      text-align: left;
+    }
+
+    .song-info h3 {
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+
+    audio {
+      width: 100%;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="movies.html">Movies</a>
+    <a href="music.html">Music</a>
+    <a href="about.html">About</a>
+    <button onclick="toggleDark()">🌙</button>
+  </nav>
+
+<h1>🎵 Tamil Movie Music Collection</h1>
+
+<div class="music-list">
+
+  <div class="song-card">
+    <img src="ambikapathy_poster.jpg" alt="Ambikapathy Poster" class="song-poster">
+    <div class="song-info">
+      <h3>Gangayile</h3>
+      <audio controls>
+        <source src="gangayile_song.mpeg" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </div>
+  </div>
+
+  <div class="song-card">
+    <img src="pathu_endrathukulla_poster.jpg" alt="Pathu Endrathukulla Poster" class="song-poster">
+    <div class="song-info">
+      <h3>10 Endrathukulla</h3>
+      <audio controls>
+        <source src="Aanalumindha_song.mpeg" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </div>
+  </div>
+
+  <div class="song-card">
+    <img src="Amaran_poster.jpg" alt="Amaran Poster" class="song-poster">
+    <div class="song-info">
+      <h3>Amaran</h3>
+      <audio controls>
+        <source src="minnale_song.mpeg" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </div>
+  </div>
+
+  <div class="song-card">
+    <img src="Anegan_poster.jpg" alt="Anegan Poster" class="song-poster">
+    <div class="song-info">
+      <h3>Aathadi Aathadi</h3>
+      <audio controls>
+        <source src="Aathadi_song.mpeg" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </div>
+  </div>
+
+  <div class="song-card">
+    <img src="ambikapathy_poster.jpg" alt="Ambikapathy Poster" class="song-poster">
+    <div class="song-info">
+      <h3>Kalarashiga</h3>
+      <audio controls>
+        <source src="kalarashiga_song.mpeg" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </div>
+  </div>
+
+  <div class="song-card">
+    <img src="Anjaan_poster.jpg" alt="Anjaan Poster" class="song-poster">
+    <div class="song-info">
+      <h3>Kaadhal Aasai</h3>
+      <audio controls>
+        <source src="kaadhal_song.mpeg" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

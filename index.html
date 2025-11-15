@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎬 Pooja Tamil Movies</title>
+  <link rel="manifest" href="manifest.json">
+
+
+<meta name="theme-color" content="#f8c100">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(() => console.log('Service Worker Registered'));
+  }
+</script>
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset and base */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: black;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 12px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+    }
+
+    nav a, nav button {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover, nav button:hover {
+      color: #f8c100;
+      text-shadow: 0 0 10px #f8c100;
+    }
+
+    /* Hero section */
+    .hero {
+      background-image: url('movie_collage.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      color: white;
+    }
+
+    /* Dark overlay for readability */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.9));
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 50px;
+      z-index: 2;
+      color: #ffcc00;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 
+        0 0 10px #ffcc00,
+        0 0 20px #ff6600,
+        0 0 30px #ff0000;
+      animation: glow 2s infinite alternate;
+    }
+
+    p {
+      font-size: 22px;
+      color: #fff;
+      max-width: 800px;
+      margin-top: 15px;
+      z-index: 2;
+      text-shadow: 0 0 8px rgba(0,0,0,0.9);
+      animation: fadeIn 3s ease-in;
+    }
+
+    /* Animations */
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff6600, 0 0 30px #ff0000; }
+      to   { text-shadow: 0 0 20px #ffee00, 0 0 40px #ff9900, 0 0 60px #ff3300; }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="movies.html">Movies</a>
+    <a href="music.html">Music</a>
+    <a href="about.html">About</a>
+    <button onclick="toggleDark()">🌙</button>
+  </nav>
+
+<section class="hero">
+  <h1>🎬 Welcome to Pooja Tamil Movie Collection</h1>
+  <p>Discover posters, watch trailers, enjoy music, and search your favorite movies.</p>
+</section>
+
+ <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js")
+    .then(() => console.log("✅ Service Worker Registered"))
+    .catch((err) => console.log("❌ Service Worker Error:", err));
+}
+</script>
+
+</body>
+</html>

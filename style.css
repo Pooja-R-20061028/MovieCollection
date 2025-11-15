@@ -1,0 +1,154 @@
+/* ---------- Base Styles (Desktop First) ---------- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a, nav button {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+nav a:hover, nav button:hover {
+  color: #f8c100;
+}
+
+h1 {
+  text-align: center;
+  margin: 30px 0 20px;
+  color: #f8c100;
+  text-shadow: 0 0 10px #f8c100;
+}
+
+#searchBox {
+  width: 90%;
+  max-width: 600px;
+  padding: 12px;
+  margin: 0 auto 30px;
+  display: block;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  padding: 0 40px 60px;
+}
+
+.movie-card {
+  background-color: #1b1b1b;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,204,0,0.7);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.movie-info h3 {
+  margin: 5px 0;
+  color: #ffcc00;
+}
+
+.movie-info p {
+  font-size: 14px;
+  color: #bbb;
+}
+
+.trailer-btn {
+  background-color: #f8c100;
+  border: none;
+  color: black;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: 0.3s;
+}
+
+.trailer-btn:hover {
+  background-color: #fff000;
+  transform: scale(1.05);
+}
+
+/* ---------- Responsive Styles (for Phones/Tablets) ---------- */
+@media only screen and (max-width: 768px) {
+  .movie-grid {
+    padding: 0 20px 40px;
+    gap: 20px;
+  }
+
+  #searchBox {
+    width: 95%;
+    font-size: 15px;
+  }
+
+  .movie-card img {
+    height: 250px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a, nav button {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .movie-grid {
+    padding: 0 10px 30px;
+    gap: 15px;
+  }
+
+  #searchBox {
+    width: 98%;
+    font-size: 14px;
+  }
+
+  .movie-card img {
+    height: 200px;
+  }
+
+  nav a, nav button {
+    font-size: 14px;
+  }
+}
