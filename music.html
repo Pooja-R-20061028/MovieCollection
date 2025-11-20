@@ -181,5 +181,17 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+const players = document.querySelectorAll("audio");
+
+players.forEach((player, index) => {
+  player.addEventListener("ended", () => {
+    const next = players[index + 1];
+    if (next) {
+      next.play(); // play next song automatically
+    }
+  });
+});
+</script>
 </body>
 </html>
